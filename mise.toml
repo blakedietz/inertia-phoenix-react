@@ -5,3 +5,6 @@ nodejs = '23.10.0'
 
 [env]
 _.file = '.env'
+
+[tasks.run_server]
+run = 'mix phx.server'
