@@ -43,14 +43,13 @@ config :esbuild,
 
 # Configure tailwind (the version is required)
 config :tailwind,
-  version: "3.4.3",
+  version: "4.0.0",
   app: [
     args: ~w(
-      --config=tailwind.config.js
-      --input=css/app.css
-      --output=../priv/static/assets/app.css
+      --input=assets/css/app.css
+      --output=priv/static/assets/app.css
     ),
-    cd: Path.expand("../assets", __DIR__)
+    cd: Path.expand("..", __DIR__)
   ]
 
 # Configures Elixir's Logger
@@ -81,7 +80,7 @@ config :inertia,
   # conventional in JavaScript. Defaults to `false`.
   camelize_props: false,
 
-  # Instruct the client side whether to encrypt the page object in the window history 
+  # Instruct the client side whether to encrypt the page object in the window history
   # state. This can also be set/overridden on a per-request basis, using the `encrypt_history`
   # controller helper. Defaults to `false`.
   history: [encrypt: false],
